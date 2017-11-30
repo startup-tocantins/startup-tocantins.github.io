@@ -1,0 +1,9 @@
+main: #47a5af
+main-1: #28b9c6
+main-2: #61cad3
+main+1: #2b8d96
+main+2: #0F7F89
+main-light: b5e6ea
+
+secondary: #f3702a
+gray: #6d6e70
