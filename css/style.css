@@ -276,13 +276,13 @@ section{
     box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
 }
 /*
-Pricing tables & lists
+join-us tables & lists
 */
-.pricing-list{
+.join-us-list{
     padding-top: 25px;
     padding-bottom: 25px;
 }
-.pricing-list li {
+.join-us-list li {
     font-size: 16px;
     font-weight: normal;
     margin-bottom: 15px;
