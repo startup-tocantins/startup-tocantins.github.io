@@ -1,9 +1,9 @@
-/* 
+/*
  Created on : Jul 4, 2017, 12:43:10 AM
  Author     : Atta-Ur-Rehman Shah (http://attacomsian.com)
  */
 $(function () {
-    //init 
+    //init
     init();
     //init wow effects
     new WOW().init();
@@ -24,16 +24,23 @@ $(function () {
 
     //init function
     function init() {
-        var secondFeature = $('#features').offset().top;
-        var scroll = $(window).scrollTop();
-        if (scroll >= 150) {
+
+        var main_offset = $('#main').offset();
+        if( typeof (main_offset) === 'undefined'){
             $('.sticky-navigation').css({"background-color": '#47a5af'});
         } else {
-            $('.sticky-navigation').css({"background-color": 'transparent'});
+            var secondFeature = $('#features').offset().top;
+            var scroll = $(window).scrollTop();
+            if (scroll >= 150) {
+                $('.sticky-navigation').css({"background-color": '#47a5af'});
+            } else {
+                $('.sticky-navigation').css({"background-color": 'transparent'});
+            }
+            if (scroll >= secondFeature - 200) {
+                $(".mobileScreen").css({'background-position': 'center top'});
+            }
         }
-        if (scroll >= secondFeature - 200) {
-            $(".mobileScreen").css({'background-position': 'center top'});
-        }
+
         return false;
     }
 });
