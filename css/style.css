@@ -318,3 +318,14 @@ join-us tables & lists
     text-shadow: none;
     background: #47a5af;
 }
+
+/**** PAGES ***/
+
+#page{
+    padding-top: 120px;
+}
+
+#page h1, #page h2, #page h3, #page h4 {
+    color: #47a5af;
+    padding-top: 10px;
+}
