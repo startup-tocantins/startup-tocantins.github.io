@@ -166,6 +166,16 @@ section{
 .text-white {
     color: #fff;
 }
+
+.text-white a {
+    color: #fff;
+}
+.text-white a:hover ,a:focus{
+    color: #ccc !important;
+}
+.text-black {
+    color: #000000 !important;
+}
 .text-primary {
     color: #47a5af !important;
 }
