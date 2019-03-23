@@ -1,0 +1,56 @@
+<!--events-->
+<section class="bg-texture  p-2" id="events">
+
+    <div class="row mb-3">
+        <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center wow fadeIn">
+            <h2 class="text-white">Eventos</h2>
+
+        </div>
+    </div>
+
+<div class="card-columns">
+
+    {% for event in site.data.events %}
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'odd' %}
+            <div class="card p-0 bg-primary ">
+                <div class="card-header text-right">{{ event.data }}</div>
+                <h5 class="card-title pl-3 pr-3 pt-3  bg-primary text-white">{{ event.summary }}</h5>
+                <p class="card-text pl-3 pr-3  bg-primary text-white">{{ event.description }}</p>
+                {% if event.location %}
+
+                <p class="card-text text-right pr-3 bg-primary   "><small class="text-dark">{{ event.location }}</small></p>
+                {% endif %}
+
+
+            </div>
+
+        {% else %}
+        <div class="card p-0 ">
+            <div class="card-header text-right">{{ event.data }}</div>
+            <h5 class="card-title pl-3 pr-3 pt-3">{{ event.summary | truncate: 100 }}</h5>
+            <p class="card-text pl-3 pr-3 ">{{ event.description | truncate: 200 }}</p>
+            {% if event.location %}
+
+            <p class="card-text text-right pr-3">
+                <small class="text-muted">{{ event.location  | truncate: 60 }}</small>
+            </p>
+            {% endif %}
+
+
+        </div>
+
+    {% endif %}
+
+
+
+
+
+
+    {% else %}
+    <p>Nenhum evento encontrado.</p>
+    {% endfor %}
+
+</div>
+
+</section>
