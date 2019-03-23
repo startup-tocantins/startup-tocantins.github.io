@@ -286,6 +286,10 @@ section{
 .card .card-img-top{
     height: 290px;
 }
+
+.card .card-title{
+    word-break: break-all;
+}
 /*
 join-us tables & lists
 */
