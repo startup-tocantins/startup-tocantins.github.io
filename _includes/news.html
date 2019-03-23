@@ -1,0 +1,105 @@
+        <!--blog-->
+        <section class="bg-faded" id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center">
+                        <h2 class="text-primary">Notícias</h2>
+                        <p class="lead pt-3">
+                            Últimas notícias sobre a comunidade de Startups do Tocantins
+                        </p>
+                    </div>
+                </div>
+                <div class="row d-md-flex mt-5" id="content-news">
+
+
+
+                    <div class="col-sm-4 mt-2 wow fadeIn" id="tmp-item" style="display: none">
+                        <div class="card">
+                            <img class="card-img-top" src="" alt="Image">
+                            <div class="card-block">
+                                <h5 class="card-title">
+                                    <a href="https://medium.com/startup-tocantins/lista-de-comunidades-brasileiras-de-startups-a6c49d20dff5" class="card-title-link">
+
+                                    </a>
+                                </h5>
+                                <p class="card-description">
+                                </p>
+                            </div>
+                            <div class="card-block text-right">
+                            </strong>
+                            <a href="https://medium.com/startup-tocantins/lista-de-comunidades-brasileiras-de-startups-a6c49d20dff5" class="card-link">
+                                Leia mais
+                            </a>
+                            <strong>
+                            </div>
+                        </div>
+                    </div>                        
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <script type="text/javascript">
+            var content = document.getElementById('content-news');
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState==4 && xhr.status==200)
+                {
+                    var data = JSON.parse(xhr.responseText);
+
+                    if(data.status == 'ok'){
+
+
+                        for( var i = 0, t = data.items.length; i < t ; i++ ){
+                            var item = data.items[i];
+
+                            var itemTemplate = document.getElementById('tmp-item');
+                            var itemTag = document.importNode(itemTemplate, true);
+                            itemTag.removeAttribute("id")
+                            itemTag.removeAttribute("style")
+
+
+                            var itemTitle = itemTag.getElementsByClassName('card-title')[0].getElementsByTagName("a")[0];
+                            var itemDescriptionElement = itemTag.getElementsByClassName('card-description')[0];
+                            var itemImage = itemTag.getElementsByClassName('card-img-top')[0];
+
+                            itemTitle.setAttribute('href' , item.link);
+                            itemTitle.innerText = item.title;
+                            itemImage.setAttribute('src' , item.thumbnail);
+
+                            itemDescriptionElement.innerText = strip_html_tags(item.description).substring(0, 120)+" ...";
+
+                            content.appendChild(itemTag);                            
+
+                        }
+
+                    }
+                }                
+            };
+            xhr.open(
+                'GET',
+                'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fstartuptocantins&api_key=wvc5t8nptpyhiruqcdaajppen9ay5vynjfn3ztlc',
+                true
+                );
+            xhr.send();
+
+
+
+            
+
+            function strip_html_tags(str){
+                 if ((str===null) || (str===''))
+                     return false;
+                 else
+                     str = str.toString();
+                 return str.replace(/<[^>]*>/g, '');
+            }
+
+     </script>

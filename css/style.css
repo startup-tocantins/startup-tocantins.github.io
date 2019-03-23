@@ -282,6 +282,10 @@ section{
 .card:hover{
     box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
 }
+
+.card .card-img-top{
+    height: 290px;
+}
 /*
 join-us tables & lists
 */
