@@ -347,3 +347,9 @@ join-us tables & lists
     color: #47a5af;
     padding-top: 10px;
 }
+
+/**** ** EVENTS ******/
+#events a.see-more{
+    color: #fff;
+    font-weight: bolder;
+}
