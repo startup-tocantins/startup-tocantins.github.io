@@ -27,7 +27,12 @@
 
         {% else %}
         <div class="card p-0 ">
-            <div class="card-header text-right">{{ event.data }}</div>
+            <div class="card-header text-right">
+                {% if event.calendar == 'parceiros' %}
+                    <span class="badge">Parceiros</span>
+                {% endif %}
+                {{ event.data }}
+            </div>
             <h5 class="card-title pl-3 pr-3 pt-3">{{ event.summary | truncate: 100 }}</h5>
             <p class="card-text pl-3 pr-3 ">{{ event.description | truncate: 200 }}</p>
             {% if event.location %}
