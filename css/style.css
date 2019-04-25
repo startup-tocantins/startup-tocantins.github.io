@@ -300,6 +300,12 @@ section{
 .card .card-title{
     word-break: break-all;
 }
+
+.card .badge{
+    color: #fff;
+    background-color: steelblue;
+
+}
 /*
 join-us tables & lists
 */
