@@ -15,11 +15,11 @@
         {% if thecycle == 'odd' %}
             <div class="card p-0 bg-primary ">
                 <div class="card-header text-right">{{ event.data }}</div>
-                <h5 class="card-title pl-3 pr-3 pt-3  bg-primary text-white">{{ event.summary }}</h5>
-                <p class="card-text pl-3 pr-3  bg-primary text-white">{{ event.description }}</p>
+                <h5 class="card-title pl-3 pr-3 pt-3  bg-primary text-white">{{ event.summary | truncate: 100 }}</h5>
+                <p class="card-text pl-3 pr-3  bg-primary text-white">{{ event.description | truncate: 200 }}</p>
                 {% if event.location %}
 
-                <p class="card-text text-right pr-3 bg-primary   "><small class="text-dark">{{ event.location }}</small></p>
+                <p class="card-text text-right pr-3 bg-primary   "><small class="text-dark">{{ event.location  | truncate: 60  }}</small></p>
                 {% endif %}
 
 
