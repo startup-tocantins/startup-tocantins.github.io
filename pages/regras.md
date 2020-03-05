@@ -71,4 +71,4 @@ Mesmo quando ela não concordar com você ou não disser exatamente o que você 
 
 
 ### Ao clicar no link abaixo você está confirmando que leu e concordou com todas as regras exibidas acima
-[![Entrar no Grupo do Whatsapp](/img/whatsapp-button.png)](https://chat.whatsapp.com/EWTBaW5J2ehGgRt2DaU4aT)
+[![Entrar no Grupo do Whatsapp](/img/whatsapp-button.png)](https://chat.whatsapp.com/IpTLRbt5buOClAqlswwWA2)
